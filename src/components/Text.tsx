@@ -1,14 +1,18 @@
+import { ReactNode } from 'react';
+import {Slot} from '@radix-ui/react-slot';
 import {clsx} from 'clsx';
 
 export interface TextProps {
     size?: 'sm' | 'md' | 'lg';
-    children:string
-
+    children:ReactNode//ReactNode -> any valid thing as children in react
+    asChild?: boolean
 }
 
-export function Text({size = 'md', children}: TextProps){
+export function Text({size = 'md', children, asChild}: TextProps){
+    const Comp = asChild ? Slot : 'span';
+
     return(
-        <span className={clsx(
+        <Comp className={clsx(
             'text-gray-100 font-sans',//default style to the element
             {
                 'text-xs': size === 'sm',
@@ -18,6 +22,6 @@ export function Text({size = 'md', children}: TextProps){
              model: 'style':'property' 'conditional' 'value'*/
         )}>
             {children}
-        </span>
+        </Comp>
     )
 }

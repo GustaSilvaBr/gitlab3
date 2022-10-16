@@ -25,3 +25,10 @@ export const Large: StoryObj<TextProps> = {
         size:"lg",
     }
 };
+
+export const CustomComponent: StoryObj<TextProps> = {
+    args:{
+        asChild: true,
+        children:<a href="www.youtube.com">I'm paragraph!</a>
+    }
+}
