@@ -13,7 +13,19 @@ export default {
             <TextInput.Input placeholder="Johndoe@example.com" />
         ]
     },
-    argTypes: {}
+    argTypes: {
+        children:{
+            table:{
+                disable: true,
+            }
+        }
+    }
 } as Meta<TextInputRootProps>;
 
 export const Default: StoryObj<TextInputRootProps> = {};
+
+export const WithoutIcon: StoryObj<TextInputRootProps> = {
+    args:{
+        children: <TextInput.Input placeholder="Johndoe@example.com"/>
+    }
+};

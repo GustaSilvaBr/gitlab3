@@ -3,6 +3,24 @@ import {Slot} from '@radix-ui/react-slot';
 import {clsx} from 'clsx';
 import {InputHTMLAttributes} from 'react';
 
+export interface TextInputRootProps{
+    children: ReactNode,
+}
+
+function TextInputRoot(props:TextInputRootProps){
+    return(
+        <div className={clsx(
+            'flex h-12 w-full items-center gap-3',
+            'px-4 py-3 bg-gray-800 rounded ',
+            'focus-within:ring-2 ring-cyan-300'
+        )}>
+            {props.children}
+        </div>
+    )
+}
+
+TextInputRoot.displayName = "TextInput.Root";
+
 export interface TextInputIconProps{
     children: ReactNode;
 }
@@ -19,23 +37,6 @@ function TextInputIcon(props: TextInputIconProps){
 
 TextInputIcon.displayName = 'TextInput.Icon';//Naming the display to show in the storybooks
 
-export interface TextInputRootProps{
-    children: ReactNode,
-}
-
-function TextInputRoot(props:TextInputRootProps){
-    return(
-        <div className={clsx(
-            'flex items-center gap-3',
-            'px-4 py-3 bg-gray-800 rounded w-full',
-            'focus-within:ring-2 ring-cyan-300'
-        )}>
-            {props.children}
-        </div>
-    )
-}
-
-TextInputRoot.displayName = "TextInput.Root";
 
 export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement>{}
 
