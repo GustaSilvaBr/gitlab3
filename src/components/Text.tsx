@@ -3,18 +3,18 @@ import {Slot} from '@radix-ui/react-slot';
 import {clsx} from 'clsx';
 
 export interface TextProps {
-    color?: 'text-gray-100' | 'text-gray-200' |'text-gray-400';
+    className?: string;
     size?: 'sm' | 'md' | 'lg';
     children:ReactNode//ReactNode -> any valid thing as children in react
     asChild?: boolean
 }
 
-export function Text({color = 'text-gray-100', size = 'md', children, asChild}: TextProps){
+export function Text({className, size = 'md', children, asChild}: TextProps){
     const Comp = asChild ? Slot : 'span';
 
     return(
         <Comp className={clsx(
-            color,
+            className,
             'font-sans',//default style to the element
             {
                 'text-xs': size === 'sm',

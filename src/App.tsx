@@ -33,14 +33,14 @@ export function App() {
         <Heading size="lg">
           Ignite Lab
         </Heading>
-        <Text size="lg" color="text-gray-400">
+        <Text size="lg" className="text-gray-400">
           Faça login e comece a usar!
         </Text>
       </div>
       <form className={styles.form.container}>
 
         <div className={styles.form.group.col}>
-          <Text>
+          <Text asChild>
             <label htmlFor="email-login">Endereço de e-mail</label>
           </Text>
           <TextInput.Root>
@@ -52,7 +52,7 @@ export function App() {
         </div>
 
         <div className={styles.form.group.col}>
-          <Text>
+          <Text asChild>
             <label htmlFor="password-login">Sua senha</label>
           </Text>
           <TextInput.Root>
@@ -65,7 +65,7 @@ export function App() {
 
         <div className={styles.form.group.row}> 
           <Checkbox id="remember-sign"/>
-          <Text>
+          <Text asChild>
             <label htmlFor="remember-sign">Lembrar de mim por 30 dias</label>
           </Text>
         </div>
@@ -77,14 +77,14 @@ export function App() {
         
       </form>
 
-      <div className="flex flex-col w-full justify-center items-center gap-3">
-        <Text size="sm" color="text-gray-200">
+      <footer className="flex flex-col w-full justify-center items-center gap-3">
+        <Text size="sm" className="text-gray-400 hover:text-gray-200 transition-colors" asChild>
           <a href="" className="underline">Esqueceu sua senha?</a>
         </Text>
-        <Text size="sm" color="text-gray-200">
+        <Text size="sm" className="text-gray-400 hover:text-gray-200 transition-colors" asChild>
           <a href="" className="underline">Não possui conta? Crie uma agora!</a>
         </Text>
-      </div>
+      </footer>
     </div>
   )
 }
