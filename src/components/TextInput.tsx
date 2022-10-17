@@ -28,7 +28,7 @@ export interface TextInputIconProps{
 function TextInputIcon(props: TextInputIconProps){
     return(
         <Slot className={clsx(
-            'w-6h h-6 text-gray-400'
+            'w-6 h-6 text-gray-400'
         )}>
             {props.children}
         </Slot> 

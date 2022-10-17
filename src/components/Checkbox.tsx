@@ -1,9 +1,11 @@
+import {RefAttributes} from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import {Check} from 'phosphor-react';
 
 import {clsx} from 'clsx';
 
-export interface CheckboxProps {}
+
+export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps, React.RefAttributes<HTMLButtonElement>{} 
 
 export function Checkbox({}:CheckboxProps){
 
